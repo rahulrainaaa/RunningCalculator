@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 /**
  * Defining alias for Composable method.
  */
-typealias ComposableFun = @Composable (scrollState: ScrollState) -> Unit
+typealias ComposableFun = @Composable (scrollState: ScrollState, mainVM: MainViewModel) -> Unit
 
 /**
  * Class retaining screen type(s) that are required here in Compose UI routing to show various screen(s) within this application.
@@ -22,10 +22,10 @@ sealed class ScreenType(
     object Run : ScreenType("run",
         R.drawable.ic_run,
         R.string.run,
-        { RunScreen(it) })
+        { state, mainVM -> RunScreen(state, mainVM) })
 
     object History : ScreenType("history",
         R.drawable.ic_history,
         R.string.history,
-        { HistoryScreen(it) })
+        { state, mainVM -> HistoryScreen(state, mainVM) })
 }

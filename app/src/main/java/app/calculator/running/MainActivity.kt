@@ -6,7 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.navigation.compose.rememberNavController
 import app.calculator.running.ui.theme.RunningCalculatorTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val mainViewModel: MainViewModel by viewModels()
