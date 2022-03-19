@@ -11,4 +11,5 @@ class MainViewModel : ViewModel() {
         screen.value = nextScreen
     }
 
+    var closeActivity: (() -> Unit)? = null
 }
