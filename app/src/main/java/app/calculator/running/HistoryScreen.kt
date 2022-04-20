@@ -17,6 +17,6 @@ fun HistoryScreen(scrollState: ScrollState, mainVM: MainViewModel) {
             .fillMaxHeight()
             .verticalScroll(scrollState)
     ) {
-        for (i in 0..100) Text(text = "History Screen $i")
+        for (i in 0..100) Text(text = "History Screen - $i")
     }
 }
