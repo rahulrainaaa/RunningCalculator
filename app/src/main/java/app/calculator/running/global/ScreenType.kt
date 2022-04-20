@@ -4,8 +4,8 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.ScrollState
 import androidx.compose.runtime.Composable
-import app.calculator.running.screen.HistoryScreen
 import app.calculator.running.R
+import app.calculator.running.screen.HistoryScreen
 import app.calculator.running.screen.RunScreen
 import app.calculator.running.vm.MainViewModel
 
@@ -23,13 +23,15 @@ sealed class ScreenType(
     @StringRes val labelResId: Int,
     val screen: ComposableFun
 ) {
-    object Run : ScreenType("run",
-        R.drawable.ic_run,
-        R.string.run,
-        { state, mainVM -> RunScreen(state, mainVM) })
+    object Run : ScreenType(
+        id = "run",
+        drawableResId = R.drawable.ic_run,
+        labelResId = R.string.run,
+        screen = { state, mainVM -> RunScreen(state, mainVM) })
 
-    object History : ScreenType("history",
-        R.drawable.ic_history,
-        R.string.history,
-        { state, mainVM -> HistoryScreen(state, mainVM) })
+    object History : ScreenType(
+        id = "history",
+        drawableResId = R.drawable.ic_history,
+        labelResId = R.string.history,
+        screen = { state, mainVM -> HistoryScreen(state, mainVM) })
 }
