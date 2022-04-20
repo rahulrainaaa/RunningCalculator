@@ -35,7 +35,7 @@ class MainViewModel @Inject constructor(
             dao.deleteAll()
             while (true) {
                 dao.insert(Workout())
-                Thread.sleep(1000)
+                Thread.sleep(100)
             }
         }
     }

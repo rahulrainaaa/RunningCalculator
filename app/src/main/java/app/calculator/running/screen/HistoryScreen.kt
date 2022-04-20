@@ -18,7 +18,7 @@ fun HistoryScreen(scrollState: ScrollState, mainVM: MainViewModel) {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
-            .verticalScroll(scrollState)
+            .verticalScroll(state = scrollState, enabled = true)
     ) {
         val list by mainVM.list.collectAsState(initial = emptyList())
         Text(text = "Count = ${list.size}")

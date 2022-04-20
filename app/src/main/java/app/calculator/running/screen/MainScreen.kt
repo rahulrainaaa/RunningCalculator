@@ -83,8 +83,8 @@ fun MainScreen(navController: NavHostController, mainVM: MainViewModel) {
                         end = 4.dp
                     )
                 ) {
-                    composable(ScreenType.Run.id, content = { currentScreen.screen(runScrollState, mainVM) })
-                    composable(ScreenType.History.id, content = { currentScreen.screen(historyScrollState, mainVM) })
+                    composable(ScreenType.Run.id) { RunScreen(runScrollState, mainVM) }
+                    composable(ScreenType.History.id) { HistoryScreen(historyScrollState, mainVM) }
                 }
             }
         )
