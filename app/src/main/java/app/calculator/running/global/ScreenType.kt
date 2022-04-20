@@ -1,9 +1,13 @@
-package app.calculator.running
+package app.calculator.running.global
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.ScrollState
 import androidx.compose.runtime.Composable
+import app.calculator.running.screen.HistoryScreen
+import app.calculator.running.R
+import app.calculator.running.screen.RunScreen
+import app.calculator.running.vm.MainViewModel
 
 /**
  * Defining alias for Composable method.

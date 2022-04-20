@@ -1,4 +1,4 @@
-package app.calculator.running
+package app.calculator.running.screen
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.*
@@ -14,6 +14,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import app.calculator.running.global.ScreenType
+import app.calculator.running.vm.MainViewModel
 import kotlinx.coroutines.launch
 
 @Composable
@@ -81,7 +83,8 @@ fun MainScreen(navController: NavHostController, mainVM: MainViewModel) {
                         end = 4.dp
                     )
                 ) {
-                    composable(currentScreen.id, content = { currentScreen.screen(runScrollState, mainVM) })
+                    composable(ScreenType.Run.id, content = { currentScreen.screen(runScrollState, mainVM) })
+                    composable(ScreenType.History.id, content = { currentScreen.screen(historyScrollState, mainVM) })
                 }
             }
         )

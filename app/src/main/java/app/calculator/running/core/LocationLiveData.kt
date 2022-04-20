@@ -1,4 +1,4 @@
-package app.calculator.running
+package app.calculator.running.core
 
 import android.annotation.SuppressLint
 import android.content.Context

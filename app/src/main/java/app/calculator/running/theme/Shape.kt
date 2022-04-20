@@ -1,4 +1,4 @@
-package app.calculator.running.ui.theme
+package app.calculator.running.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

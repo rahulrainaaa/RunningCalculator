@@ -1,4 +1,4 @@
-package app.calculator.running.ui.theme
+package app.calculator.running.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
