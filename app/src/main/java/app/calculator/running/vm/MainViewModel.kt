@@ -1,6 +1,5 @@
 package app.calculator.running.vm
 
-import android.content.Context
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,14 +8,12 @@ import app.calculator.running.db.dao.WorkoutDao
 import app.calculator.running.db.data.Workout
 import app.calculator.running.global.ScreenType
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    @ApplicationContext context: Context,
     private val dao: WorkoutDao
 ) : ViewModel() {
 
@@ -26,9 +23,10 @@ class MainViewModel @Inject constructor(
         screen.value = nextScreen
     }
 
-    var closeActivity: (() -> Unit)? = null
+    @Inject
+    lateinit var locationLiveData: LocationLiveData
 
-    val locationLiveData by lazy { LocationLiveData(context) }
+    var closeActivity: (() -> Unit)? = null
 
     val list = dao.getAllWorkoutFlow()
 
